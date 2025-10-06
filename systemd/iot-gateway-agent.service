@@ -1,0 +1,12 @@
+[Unit]
+Description=IoT Gateway Agent
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/iot-gateway-agent
+Restart=on-failure
+RestartSec=5
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target

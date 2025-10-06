@@ -1,0 +1,11 @@
+[Unit]
+Description=OTA Applier (one-shot)
+After=iot-gateway-agent.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/ota-applier
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
